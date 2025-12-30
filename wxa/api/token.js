@@ -17,7 +17,7 @@ module.exports = function () {
 			axios.get('https://api.weixin.qq.com/cgi-bin/token', {
 				params: {
 					grant_type: 'client_credential',
-					appid     : conf.appId,
+					appid     : conf.appid,
 					secret    : conf.secret
 				}
 			}).then(

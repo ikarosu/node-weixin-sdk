@@ -15,7 +15,7 @@ module.exports = function (orderInfo
 	const conf = this.config;
 	return new Promise((resolve, reject) => {
 		const oParams = {
-			appid           : conf.appId,
+			appid           : conf.appid,
 			mch_id          : conf.pay.mchId,
 			nonce_str       : util.randomString(),
 			body            : orderInfo.title,
@@ -46,7 +46,7 @@ module.exports = function (orderInfo
 						const jXml = result.xml;
 						if (jXml['return_code'] === 'SUCCESS' && jXml['result_code'] === 'SUCCESS') {
 							const _config = {
-								appId    : conf.appId,
+								appid    : conf.appid,
 								timeStamp: util.wxTimestamp(),
 								nonceStr : util.randomString(),
 								package  : 'prepay_id=' + jXml['prepay_id'],

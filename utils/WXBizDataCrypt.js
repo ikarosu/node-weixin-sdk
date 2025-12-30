@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
-function WXBizDataCrypt(appId, sessionKey) {
-	this.appId = appId;
+function WXBizDataCrypt(appid, sessionKey) {
+	this.appid = appid;
 	this.sessionKey = sessionKey;
 }
 
@@ -27,7 +27,7 @@ WXBizDataCrypt.prototype.decryptData = function (encryptedData, iv) {
 		throw new Error('Illegal Buffer')
 	}
 
-	if (decoded.watermark.appid !== this.appId) {
+	if (decoded.watermark.appid !== this.appid) {
 		throw new Error('Illegal Buffer')
 	}
 

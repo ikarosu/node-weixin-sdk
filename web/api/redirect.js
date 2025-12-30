@@ -14,5 +14,5 @@ module.exports = function (backUrl,
 		client: 'https://open.weixin.qq.com/connect/oauth2/authorize',
 		pc    : 'https://open.weixin.qq.com/connect/qrconnect'
 	}[type];
-	return `${weixinApi}?appid=${conf.appId}&redirect_uri=${url}&response_type=code&scope=${scope}&state=${state}#wechat_redirect`;
+	return `${weixinApi}?appid=${conf.appid}&redirect_uri=${url}&response_type=code&scope=${scope}&state=${state}#wechat_redirect`;
 };

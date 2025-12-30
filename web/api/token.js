@@ -21,7 +21,7 @@ module.exports = function (code) {
 	return new Promise((resolve, reject) => {
 		axios.get('https://api.weixin.qq.com/sns/oauth2/access_token', {
 			params: {
-				appid     : conf.appId,
+				appid     : conf.appid,
 				secret    : conf.secret,
 				code,
 				grant_type: 'authorization_code'

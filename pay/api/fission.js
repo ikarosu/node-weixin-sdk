@@ -16,7 +16,7 @@ module.exports = function (packInfo) {
 			nonce_str   : util.randomString(),
 			mch_billno  : util.orderNum(),
 			mch_id      : conf.pay.mchId,
-			wxappid     : conf.appId,
+			wxappid     : conf.appid,
 			send_name   : packInfo.sendName,
 			re_openid   : packInfo.openid,
 			total_amount: util.toCent(packInfo.amount),

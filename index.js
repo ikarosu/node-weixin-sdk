@@ -4,10 +4,10 @@
  * @Since 2020/2/3
  */
 
-const GzhSDK = require('./gzh');
-const WebSDK = require('./web');
-const WxaSDK = require('./wxa');
-const PaySDK = require('./pay');
+import { default as GzhSDK } from './gzh/index.js';
+import { default as WebSDK } from './web/index.js';
+import { default as WxaSDK } from './wxa/index.js';
+import { default as PaySDK } from './pay/index.js';
 
 class Gzh extends GzhSDK {
 	constructor(config) {
@@ -59,7 +59,7 @@ class WxSDK {
 	version = require('./package.json').version;
 
 	config = {
-		appId : '',
+		appid : '',
 		secret: '',
 
 		token : '', // 公众号开发配置 token
@@ -80,4 +80,4 @@ class WxSDK {
 	};
 }
 
-module.exports = WxSDK;
+export default WxSDK;

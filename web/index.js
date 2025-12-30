@@ -4,14 +4,14 @@
  * @Since 2019/11/18
  */
 
-const redirect = require('./api/redirect');
-const token = require('./api/token');
-const checkToken = require('./api/check-token');
-const userInfo = require('./api/user-info');
-const getTicket = require('./api/get-ticket');
-const jsSdkConfig = require('./api/js-sdk-config');
+import redirect from './api/redirect.js';
+import token from './api/token.js';
+import checkToken from './api/check-token.js';
+import userInfo from './api/user-info.js';
+import getTicket from './api/get-ticket.js';
+import jsSdkConfig from './api/js-sdk-config.js';
 
-class WebSDK {
+export default class WebSDK {
 	constructor(config) {
 		this.config = Object.assign({}, config);
 	}
@@ -27,5 +27,3 @@ class WebSDK {
 	getTicket = getTicket;
 	jsSdkConfig = jsSdkConfig;
 }
-
-module.exports = WebSDK;

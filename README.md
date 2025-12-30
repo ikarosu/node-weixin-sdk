@@ -12,7 +12,7 @@
 
 ```json
 {
-    "appId" : "",
+    "appid" : "",
     "secret": "",
 
     "token" : "公众号开发配置 token",

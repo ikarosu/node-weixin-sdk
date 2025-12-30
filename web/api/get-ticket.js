@@ -5,11 +5,11 @@
  * @Since 2020/2/3
  */
 
-const axios = require('axios');
-const util = require('../../utils');
+import axios from 'axios';
+import util from '../../utils.js';
 const cache = util.cache;
 
-module.exports = function () {
+export default function () {
 	return this.$root.gzh.token().then(
 		sToken => {
 			return new Promise((resolve, reject) => {

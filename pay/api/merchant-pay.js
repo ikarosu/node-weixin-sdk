@@ -13,7 +13,7 @@ module.exports = function (oOrder) {
 	const certFile = this.certFile;
 	return new Promise((resolve, reject) => {
 		const oParams = {
-			mch_appid       : conf.appId,
+			mch_appid       : conf.appid,
 			mchid           : conf.pay.mchId,
 			nonce_str       : util.randomString(),
 			partner_trade_no: util.orderNum(),

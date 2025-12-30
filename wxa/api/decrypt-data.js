@@ -9,7 +9,7 @@ const util = require('../../utils');
 module.exports = function (sEncryptedData, sIv, sSessionKey) {
 	const conf = this.config;
 	const WXBizDataCrypt = util.WXBizDataCrypt;
-	const pc = new WXBizDataCrypt(conf.appId, sSessionKey);
+	const pc = new WXBizDataCrypt(conf.appid, sSessionKey);
 	return new Promise(resolve => {
 		const data = pc.decryptData(sEncryptedData, sIv);
 		resolve(data);

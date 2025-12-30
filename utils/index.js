@@ -4,17 +4,13 @@
  * @Since 2020/2/3
  */
 
-const crypto = require('node:crypto');
-const xml2js = require('xml2js');
-const {LRUCache: Lru} = require('lru-cache');
+import crypto from 'node:crypto';
+import xml2js from 'xml2js';
+import { TTLCache } from '@isaacs/ttlcache'
+const cache = new TTLCache({ max: 10000, ttl: 1000 * 60 * 60 * 2 })
 
-const cache = new Lru({
-	max   : 5000,
-	maxAge: 1000 * 60 * 60 * 2 // 2h
-});
-
-const WXBizDataCrypt = require('./WXBizDataCrypt');
-const xmlBuilder = new xml2js.Builder({headless: true, rootName: 'xml', cdata: true});
+import WXBizDataCrypt from './WXBizDataCrypt.js';
+const xmlBuilder = new xml2js.Builder({ headless: true, rootName: 'xml', cdata: true });
 const xmlParser = xml2js.parseString;
 
 function aes256gcmDecrypt(ciphertext, key, iv, aad) {
@@ -36,12 +32,12 @@ function PKCS7Padding(sData, sKey) {
 
 function sha1(source) {
 	return crypto.createHash('sha1')
-			.update(source, 'utf-8').digest('hex');
+		.update(source, 'utf-8').digest('hex');
 }
 
 function md5(sResult) {
 	return crypto.createHash('md5')
-			.update(sResult).digest('hex').toUpperCase();
+		.update(sResult).digest('hex').toUpperCase();
 }
 
 function randomString(nLen = 30) {
@@ -68,7 +64,7 @@ function wxTimestamp() {
 	return Math.round(new Date().getTime() / 1000).toString();
 }
 
-module.exports = {
+export default {
 	cache,
 	xmlBuilder,
 	xmlParser,

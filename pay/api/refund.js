@@ -13,7 +13,7 @@ module.exports = function ({payNo, itemNo, detail, amount, price}) {
 	const certFile = this.certFile;
 	return new Promise((resolve, reject) => {
 		const oParams = {
-			appid        : conf.appId,
+			appid        : conf.appid,
 			mch_id       : conf.pay.mchId,
 			nonce_str    : util.randomString(),
 			sign_type    : 'MD5',

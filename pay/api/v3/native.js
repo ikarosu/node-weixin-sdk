@@ -12,7 +12,7 @@ module.exports = async function(orderInfo = {title: '', amount: 0, currency: 'CN
 	const apiPath = '/v3/pay/transactions/native';
 	const url = this.apiDomain + apiPath;
 	const params = {
-		appid       : conf.appId,
+		appid       : conf.appid,
 		mchid       : conf.pay.mchId,
 		description : orderInfo.title ?? '',
 		out_trade_no: orderInfo.no,

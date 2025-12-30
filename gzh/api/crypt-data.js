@@ -69,7 +69,7 @@ module.exports = {
 		const bufLen = Buffer.alloc(4);
 		bufLen.writeUInt32BE(msg.length, 0);
 
-		const appid = Buffer.from(this.config.appId);
+		const appid = Buffer.from(this.config.appid);
 		const bufferMsg = Buffer.concat([randomStr, bufLen, msg, appid]);
 
 		const content = pkcs7.encode(bufferMsg);
